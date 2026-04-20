@@ -1,0 +1,4 @@
+bullmq
+python-dotenv
+redis
+pymongo
