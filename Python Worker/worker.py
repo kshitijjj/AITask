@@ -7,8 +7,13 @@ from pymongo import MongoClient
 from bson import ObjectId
 from dotenv import load_dotenv;
 load_dotenv()
+dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+load_dotenv(dotenv_path)
 
+print(dotenv_path)
 redisUrl=os.getenv("redisUrl")
+
+print(redisUrl)
 
 client = MongoClient("mongodb+srv://myank07official:Mayank%409550@mayank.jzywnhr.mongodb.net")
 db = client["Mern_Stack_Project"]
@@ -57,7 +62,7 @@ async def process(job,job_token):
 
 async def main():
     print("worker running !!")
-    worker = Worker("task",process,{"connection":redisUrl})
+    worker = Worker("task",process,{"connection":"redis://localhost:6379"})
     await asyncio.Future()
 
 if __name__ == "__main__":
