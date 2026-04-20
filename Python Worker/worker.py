@@ -12,10 +12,11 @@ load_dotenv(dotenv_path)
 
 print(dotenv_path)
 redisUrl=os.getenv("redisUrl")
+mongodbURI=os.getenv("mongodbURI")
 
 print(redisUrl)
 
-client = MongoClient("mongodb+srv://myank07official:Mayank%409550@mayank.jzywnhr.mongodb.net")
+client = MongoClient(mongodbURI)
 db = client["Mern_Stack_Project"]
 mycol = db["taskmodels"]
 
@@ -62,7 +63,7 @@ async def process(job,job_token):
 
 async def main():
     print("worker running !!")
-    worker = Worker("task",process,{"connection":"redis://localhost:6379"})
+    worker = Worker("task",process,{"connection":redisURL})
     await asyncio.Future()
 
 if __name__ == "__main__":
