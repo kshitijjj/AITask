@@ -21,6 +21,7 @@ MongoDB • Express.js • Node.js • React.js • BullMQ • Python • Flowbi
 3. Designed a responsive and user-friendly interface using Flowbite (Tailwind-based UI library) for faster UI development and consistent styling.
 4. Integrated BullMQ with Redis-based worker queues to handle asynchronous background processing tasks efficiently, such as OTP email delivery and job execution.
 5. Utilized Python alongside the MERN stack for supporting backend utilities and processing tasks, enhancing system flexibility and modularity.
+6. Utilized AI tools for debugging errors and AI tools and documentation for implementation of Redis queues, BullMQ workflows, and background job handling.
 
 
 
